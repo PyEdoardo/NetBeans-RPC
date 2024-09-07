@@ -1,3 +1,4 @@
 Manifest-Version: 1.0
+OpenIDE-Module-Install: com/pyedoardo/netbeansrpc/Installer.class
 OpenIDE-Module-Localizing-Bundle: com/pyedoardo/netbeansrpc/Bundle.properties
 
