@@ -10,7 +10,7 @@ O projeto **netbeans-rpc** integra o NetBeans IDE com o Discord por meio do Rich
 
 ## Instalação
 
-1. **Baixe o Arquivo `.nbm`**: Obtenha o arquivo de módulo do NetBeans (`netbeans-rpc.nbm`) na sessão de releases ou no [Actions](https://github.com/PyEdoardo/NetBeans-RPC/actions)
+1. **Baixe o Arquivo `.nbm`**: Obtenha o arquivo de módulo do NetBeans (`netbeans-rpc.nbm`) na sessão de [Release](https://github.com/PyEdoardo/NetBeans-RPC/releases) ou no [Actions](https://github.com/PyEdoardo/NetBeans-RPC/actions)
 
 2. **Instale o Módulo**:
    - Abra o NetBeans IDE.
