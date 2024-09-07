@@ -1,0 +1,49 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Deploy do Módulo
+
+on:
+  push:
+    branches:
+      - main  # Ou a branch em que você deseja acionar o workflow
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'adopt-openjdk'
+          java-version: '17'  # Defina a versão do JDK apropriada
+
+      - name: Install Apache Ant
+        run: sudo apt-get install -y ant
+
+      - name: Build NetBeans Module
+        run: |
+          ant -f nbproject/build.xml  # Certifique-se de que o arquivo build.xml está no caminho correto
+
+      - name: Archive NBM file
+        uses: actions/upload-artifact@v3
+        with:
+          name: netbeans-module
+          path: path/to/your/nbm/*.nbm  # Altere para o caminho onde o arquivo .nbm é gerado
+
+      - name: Deploy NBM file
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: path/to/your/nbm/*.nbm  # Altere para o caminho onde o arquivo .nbm é gerado
+          asset_name: my-module.nbm
+          asset_content_type: application/zip  # MIME type for .nbm files
