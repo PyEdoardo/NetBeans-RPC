@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Deploy do Módulo
+name: Build NetBeans Module with Maven
 
 on:
   push:
@@ -28,9 +28,9 @@ jobs:
           java-version: '21'  # Defina a versão do JDK apropriada
 
       - name: Install Maven
-        uses: actions/setup-maven@v3
-        with:
-          maven-version: '3.8.5'  # Defina a versão do Maven apropriada
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y maven
 
       - name: Build NetBeans Module
         run: mvn clean install
@@ -40,3 +40,4 @@ jobs:
         with:
           name: netbeans-module
           path: target/*.nbm  # Altere para o caminho onde o arquivo .nbm é gerado
+
