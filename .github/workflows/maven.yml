@@ -24,26 +24,19 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
-          distribution: 'adopt-openjdk'
-          java-version: '17'  # Defina a versão do JDK apropriada
+          distribution: 'temurin'
+          java-version: '21'  # Defina a versão do JDK apropriada
 
-      - name: Install Apache Ant
-        run: sudo apt-get install -y ant
+      - name: Install Maven
+        uses: actions/setup-maven@v3
+        with:
+          maven-version: '3.8.5'  # Defina a versão do Maven apropriada
 
       - name: Build NetBeans Module
-        run: |
-          ant -f nbproject/build.xml  # Certifique-se de que o arquivo build.xml está no caminho correto
+        run: mvn clean install
 
       - name: Archive NBM file
         uses: actions/upload-artifact@v3
         with:
           name: netbeans-module
-          path: path/to/your/nbm/*.nbm  # Altere para o caminho onde o arquivo .nbm é gerado
-
-      - name: Deploy NBM file
-        uses: actions/upload-release-asset@v1
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: path/to/your/nbm/*.nbm  # Altere para o caminho onde o arquivo .nbm é gerado
-          asset_name: my-module.nbm
-          asset_content_type: application/zip  # MIME type for .nbm files
+          path: target/*.nbm  # Altere para o caminho onde o arquivo .nbm é gerado
