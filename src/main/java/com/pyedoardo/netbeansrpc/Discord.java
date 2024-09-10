@@ -57,7 +57,7 @@ public class Discord {
                             core.activityManager().updateActivity(activity);
                         }
                         core.runCallbacks();
-                        Thread.sleep(1500);
+                        Thread.sleep(2500);
 
                     } catch (InterruptedException e) {
                         e.printStackTrace();
