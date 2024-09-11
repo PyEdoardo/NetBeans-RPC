@@ -24,4 +24,7 @@ public class Arquivo {
     public String getDescricao() {
         return descricao;
     }
+    public String toString(){
+        return idImagem + descricao;
+    }
 }

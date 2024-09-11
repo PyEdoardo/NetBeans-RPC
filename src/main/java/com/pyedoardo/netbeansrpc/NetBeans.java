@@ -63,6 +63,7 @@ public class NetBeans {
     tipoDeArquivoParaImagemDescricao.put("proprieties", new Arquivo("iconproprieties", "Arquivo de Propriedades"));
     tipoDeArquivoParaImagemDescricao.put("md", new Arquivo("iconmd", "Arquivo de Markdown"));
     tipoDeArquivoParaImagemDescricao.put("kt", new Arquivo("iconkt", "Código Kotlin"));
+    tipoDeArquivoParaImagemDescricao.put("default", new Arquivo("logo", "Nenhum arquivo aberto"));
 }
     public String extensaoArquivo() {
     TopComponent componente = WindowManager.getDefault().getRegistry().getActivated();
@@ -92,11 +93,14 @@ public class NetBeans {
                     if (pastaAtual.getFileObject("build.gradle") != null || pastaAtual.getFileObject("build.gradle.kts") != null || pastaAtual.getFileObject("gradlew.bat") != null) {
                         return "Gradle";
                     }
+                    if (pastaAtual.getFileObject("build.xml") != null){
+                        return "Ant";
+                    }
                     pastaAtual = pastaAtual.getParent(); 
                 }
             }
         }
-        return "Ant";
+        return "";
     }
     public Map<String, String> tipoProjetoImg = new HashMap<>();
     
