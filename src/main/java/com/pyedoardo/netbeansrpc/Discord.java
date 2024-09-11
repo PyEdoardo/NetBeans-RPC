@@ -52,6 +52,7 @@ public class Discord {
                             //Isso basicamente diz ao discord o campos de texto que ele consegue receber, porém por algum motivo o Enum ActivityType não funciona
                             // Isso abaixo
                             //activity.setType(ActivityType.CUSTOM); não funciona de jeito nenhum, ele até para de soltar a log :(
+                            Arquivo arquivo = new Arquivo();
                             activity.setDetails("Arquivo: " + net.arquivoAberto() + " ("+ NetBeans.linhaAtual()+"|"+NetBeans.linhasTotais()+")");
                             activity.setState("Projeto: " + net.getProjetoAberto());
                             
@@ -60,7 +61,7 @@ public class Discord {
                             
                             activity.assets().setSmallImage(net.tipoProjetoImg.get(net.tipoDeProjeto()));
                             activity.assets().setSmallText("Gerenciador: " + net.tipoDeProjeto());
-
+                            log.iniciarLog(arquivo.toString());
                             core.activityManager().updateActivity(activity);
                         }
                         //Esse método força a troca de campos de texto e atualiza com oq recebeu no try.
