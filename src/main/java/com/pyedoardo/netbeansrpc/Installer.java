@@ -22,6 +22,7 @@ public class Installer extends ModuleInstall {
     @Override
     public boolean closing(){
         log.inicarLog("Encerrando Módulo");
+        discord.stopRPC();
         return true;
     }
 }
