@@ -12,6 +12,8 @@ public class Installer extends ModuleInstall {
     Logger log = new Logger();
     @Override
     public void restored() {
+        //Netbeans......pq vc não mostra os logs em view ide logs? pq........
+        //Vou deixar o log só de maldade e pesar mais o módulo.
             log.inicarLog("Iniciando Módulo");
                 try{
                     discord.iniciarRPC();
@@ -19,6 +21,7 @@ public class Installer extends ModuleInstall {
                     System.err.println(e);
             };
     }
+    //Espero que funcione 🤡
     @Override
     public boolean closing(){
         log.inicarLog("Encerrando Módulo");

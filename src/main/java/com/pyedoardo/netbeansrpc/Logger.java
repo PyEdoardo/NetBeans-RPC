@@ -13,11 +13,11 @@ import java.time.LocalTime;
 public class Logger {
     private String data;
     private String horario;
-    
+    //Extremamente orientado a objetos, Steve jobs teria até inveja.
     public void inicarLog(String texto){
         data = String.valueOf(LocalDate.now());
         horario = String.valueOf(LocalTime.now());
-        
+        //Pra que regex se tem esse tipo de gambiarra?
         String retorno = "[NetBeans-RPC] "
                                 +
                                 "["
