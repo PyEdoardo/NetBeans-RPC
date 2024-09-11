@@ -21,6 +21,8 @@ public class Arquivo {
     private final String idImagem;
     private final String descricao;
 
+    public Arquivo(){
+    }
     public Arquivo(String idImagem, String descricao) {
         this.idImagem = idImagem;
         this.descricao = descricao;
