@@ -18,8 +18,8 @@ package com.pyedoardo.netbeansrpc;
 
 public class Arquivo {
     //Classe que serve de modelo pra o ícone e descrição de um tipo de arquivo.
-    private final String idImagem;
-    private final String descricao;
+    private String idImagem;
+    private String descricao;
 
     public Arquivo(){
     }
