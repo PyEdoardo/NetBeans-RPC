@@ -61,7 +61,7 @@ public class Discord {
                             
                             activity.assets().setSmallImage(net.tipoProjetoImg.get(net.tipoDeProjeto()));
                             activity.assets().setSmallText("Gerenciador: " + net.tipoDeProjeto());
-                            //log.iniciarLog(arquivo.toString(imagemDescricao.getIdImagem(), imagemDescricao.getDescricao()));
+                            log.iniciarLog(imagemDescricao.toString());
                             core.activityManager().updateActivity(activity);
                         }
                         //Esse método força a troca de campos de texto e atualiza com oq recebeu no try.
