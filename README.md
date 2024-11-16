@@ -38,6 +38,6 @@ Se você deseja contribuir para o projeto, envie suas sugestões e melhorias atr
 
 ## Contato
 
-Para mais informações ou suporte, entre em contato com o desenvolvedor através do [GitHub](https://github.com/PyEdoardo/NetBeans-RPC) ou envie um e-mail para [edoardotombolesi8@gmail.com](mailto:edoardotombolesi8@gmail.com).
+Para mais informações ou suporte, entre em contato comigo através do [GitHub](https://github.com/PyEdoardo) ou envie um e-mail para [edoardotombolesi8@gmail.com](mailto:edoardotombolesi8@gmail.com).
 
 Obrigado por usar o **netbeans-rpc**!
