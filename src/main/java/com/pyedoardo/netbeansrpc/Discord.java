@@ -15,19 +15,16 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 package com.pyedoardo.netbeansrpc;
-import de.jcm.discordgamesdk.Core;
 import de.jcm.discordgamesdk.CreateParams;
 import de.jcm.discordgamesdk.activity.Activity;
-import de.jcm.discordgamesdk.activity.ActivityType;
-import java.io.File;
 import de.jcm.discordgamesdk.Core;
+import de.jcm.discordgamesdk.activity.ActivityType;
 import java.io.IOException;
-import java.time.Instant;
-import javax.swing.JFrame;
 
 //Classe que faz o RPC (Remote procedure call) com o discord, passando os status da atividade e atualizando de acordo com o tempo em "Thread.sleep(TEMPO);"
 public class Discord {
     private Core core;
+    private volatile boolean running = true;
     public void iniciarRPC() throws IOException {
         Logger log = new Logger();
         
@@ -39,35 +36,37 @@ public class Discord {
             core = new Core(params);
 
             new Thread(() -> {
-                while (true) {
+                while (running) {
                     try {
                         NetBeans net = new NetBeans();
                         //Isso pega o nome do arquivo pela classe NetBeans.class
                         Arquivo imagemDescricao = net.tipoDeArquivoParaImagemDescricao.getOrDefault(net.extensaoArquivo(), new Arquivo("ID_DEFAULT_IMAGE", "Descrição padrão"));
                                             
-                        log.inicarLog("Projeto: " + net.getProjetoAberto());
-                        log.inicarLog("Arquivo: " + net.arquivoAberto());
+                        log.inicarLog("Project: " + net.getProjetoAberto());
+                        log.inicarLog("File: " + net.arquivoAberto());
 
                         try (Activity activity = new Activity()) {
                             //Isso basicamente diz ao discord o campos de texto que ele consegue receber, porém por algum motivo o Enum ActivityType não funciona
                             // Isso abaixo
-                            //activity.setType(ActivityType.CUSTOM); não funciona de jeito nenhum, ele até para de soltar a log :(
+                            activity.setType(ActivityType.PLAYING); //não funciona de jeito nenhum, ele até para de soltar a log :(
                             Arquivo arquivo = new Arquivo();
-                            activity.setDetails("Arquivo: " + net.arquivoAberto() + " ("+ NetBeans.linhaAtual()+"|"+NetBeans.linhasTotais()+")");
-                            activity.setState("Projeto: " + net.getProjetoAberto());
+                            //activity.setDetails("File: " + net.arquivoAberto() + " ("+ NetBeans.linhaAtual()+"|"+NetBeans.linhasTotais()+")");
+                            //activity.setState("Project: " + net.getProjetoAberto());
+                            activity.setDetails("Editing " + net.arquivoAberto() + " ("+ NetBeans.linhaAtual()+"/"+NetBeans.linhasTotais()+")");
+                            activity.setState("In " + net.getProjetoAberto());
                             
                             activity.assets().setLargeImage(imagemDescricao.getIdImagem());
                             activity.assets().setLargeText(imagemDescricao.getDescricao());
                             
                             activity.assets().setSmallImage(net.tipoProjetoImg.get(net.tipoDeProjeto()));
-                            activity.assets().setSmallText("Gerenciador: " + net.tipoDeProjeto());
+                            activity.assets().setSmallText(net.tipoDeProjeto());
                             core.activityManager().updateActivity(activity);
                         }
                         //Esse método força a troca de campos de texto e atualiza com oq recebeu no try.
                         core.runCallbacks();
                         //Esse método faz com que a thread rode a cada 1500ms, o suficiente pra não quebrar os métodos de procurar as ext dos arquivos;
                         //Pode deixar abaixo disso, porém pode quebrar o módulo.
-                        Thread.sleep(1500);
+                        Thread.sleep(2000);
 
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -80,7 +79,6 @@ public class Discord {
                 }
             }).start();
         } catch (Exception e) {
-            //Pra tratar excessões e avisar na log, mas por algum motivo não aparece KKKKKKKKKKKKKKKKKKKKK
             log.inicarLog("Erro ao iniciar RPC: " + e.getMessage());
             e.printStackTrace();
         }
@@ -88,8 +86,9 @@ public class Discord {
 
     public void stopRPC() {
         //Método pra desligar o RPC, feito pra quando o netbeans fechar, ele parar com a comunicação.
+        running = false;
         if (core != null) {
-            core.close();
+        core.close();
         }
     }
 }

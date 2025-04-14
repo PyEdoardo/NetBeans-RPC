@@ -47,7 +47,7 @@ public class NetBeans {
                 return retorno;
             }
         }
-        return "Em repouso";
+        return "Sleeping...";
     }
     public String getProjetoAberto() throws IOException {
         TopComponent activeComponent = WindowManager.getDefault().getRegistry().getActivated();
@@ -61,21 +61,21 @@ public class NetBeans {
                 }
             }
         }
-        return "Nenhum projeto aberto";
+        return "Empty Project";
     }
     public Map<String, Arquivo> tipoDeArquivoParaImagemDescricao = new HashMap<>();
 
 {
     //Esse Map guarda a extensão de um arquivo, e o relaciona com um ícone e uma descrição.
-    tipoDeArquivoParaImagemDescricao.put("java", new Arquivo("iconjava", "Classe Java"));
-    tipoDeArquivoParaImagemDescricao.put("xml", new Arquivo("iconxml", "Arquivo XML"));
-    tipoDeArquivoParaImagemDescricao.put("txt", new Arquivo("icontxt", "Arquivo de Texto"));
-    tipoDeArquivoParaImagemDescricao.put("json", new Arquivo("iconjson", "Dicionário JSON"));
-    tipoDeArquivoParaImagemDescricao.put("yml", new Arquivo("iconyml", "Arquivo YML"));
-    tipoDeArquivoParaImagemDescricao.put("proprieties", new Arquivo("iconproprieties", "Arquivo de Propriedades"));
-    tipoDeArquivoParaImagemDescricao.put("md", new Arquivo("iconmd", "Arquivo de Markdown"));
-    tipoDeArquivoParaImagemDescricao.put("kt", new Arquivo("iconkt", "Código Kotlin"));
-    tipoDeArquivoParaImagemDescricao.put("default", new Arquivo("iconjava", "Nenhum arquivo aberto"));
+    tipoDeArquivoParaImagemDescricao.put("java", new Arquivo("iconjava", "Java Class"));
+    tipoDeArquivoParaImagemDescricao.put("xml", new Arquivo("iconxml", "XML"));
+    tipoDeArquivoParaImagemDescricao.put("txt", new Arquivo("icontxt", "Text File"));
+    tipoDeArquivoParaImagemDescricao.put("json", new Arquivo("iconjson", "JSON"));
+    tipoDeArquivoParaImagemDescricao.put("yml", new Arquivo("iconyml", "YML"));
+    tipoDeArquivoParaImagemDescricao.put("proprieties", new Arquivo("iconproprieties", "Proprieties"));
+    tipoDeArquivoParaImagemDescricao.put("md", new Arquivo("iconmd", "Markdown"));
+    tipoDeArquivoParaImagemDescricao.put("kt", new Arquivo("iconkt", "Kotlin Class"));
+    tipoDeArquivoParaImagemDescricao.put("default", new Arquivo("iconjava", "Sleeping.."));
 }
     public String extensaoArquivo() {
         //Obviamente pega a extensão do arquivo que está sendo editado..

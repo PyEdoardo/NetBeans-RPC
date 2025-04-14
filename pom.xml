@@ -49,32 +49,32 @@
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-api-annotations-common</artifactId>
-            <version>RELEASE220</version>
+            <version>RELEASE250</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-modules</artifactId>
-            <version>RELEASE220</version>
+            <version>RELEASE250</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-util-ui</artifactId>
-            <version>RELEASE220</version>
+            <version>RELEASE250</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-windows</artifactId>
-            <version>RELEASE220</version>
+            <version>RELEASE250</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-loaders</artifactId>
-            <version>RELEASE220</version>
+            <version>RELEASE250</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-modules-projectapi</artifactId>
-            <version>RELEASE220</version>
+            <version>RELEASE250</version>
         </dependency>
         <dependency>
             <groupId>club.minnced</groupId>
@@ -84,23 +84,23 @@
         <dependency>
 	    <groupId>com.github.JnCrMx</groupId>
 	    <artifactId>discord-game-sdk4j</artifactId>
-	    <version>java-impl-SNAPSHOT</version>
+	    <version>v1.0.0</version>
 	</dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-util-lookup</artifactId>
-            <version>RELEASE220</version>
+            <version>RELEASE250</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-filesystems</artifactId>
-            <version>RELEASE220</version>
+            <version>RELEASE250</version>
             <scope>compile</scope>
 </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-text</artifactId>
-            <version>RELEASE111</version>
+            <version>RELEASE250</version>
         </dependency>
     </dependencies>
     <properties>
