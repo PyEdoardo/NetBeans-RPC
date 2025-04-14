@@ -1,43 +1,81 @@
-# Projeto NetBeans-RPC
+# 🚀 **NetBeans Discord RPC Plugin** 
 
-O projeto **netbeans-rpc** integra o NetBeans IDE com o Discord por meio do Rich Presence (RPC), utilizando o **Discord Game SDK**. Essa integração permite exibir informações personalizadas sobre o que você está fazendo no NetBeans diretamente no seu perfil do Discord.
+### Uma ferramenta para integrar o Discord com a IDE NetBeans e mostrar sua atividade diretamente no seu perfil!
 
-## Funcionalidades
+Este plugin oferece uma maneira simples de exibir sua atividade de programação diretamente no Discord enquanto você trabalha no **NetBeans**.
 
-- **Status do Editor**: Mostra o arquivo, linhas totais do código, o gerenciador do projeto e o próprio nome do projeto do NetBeans no seu Discord.
-- **Atualização em Tempo Real**: Atualiza automaticamente o status do Discord conforme você navega entre arquivos ou modifica o projeto.
-- **Personalização**: Configurações para exibir imagens e descrições específicas no status do Discord usando o Game SDK.
+---
 
-## Instalação
+## 🧩 **Sobre o Plugin**
 
-1. **Baixe o Arquivo `.nbm`**: Obtenha o arquivo de módulo do NetBeans (`netbeans-rpc.nbm`) na sessão de [Release](https://github.com/PyEdoardo/NetBeans-RPC/releases) ou no [Actions](https://github.com/PyEdoardo/NetBeans-RPC/actions)
+O **NetBeans Discord RPC** é um plugin para o **NetBeans IDE** que exibe o que você está fazendo em tempo real no Discord. Ele mostra o arquivo aberto, o projeto atual e até mesmo a linha que você está editando! 
 
-2. **Instale o Módulo**:
-   - Abra o NetBeans IDE.
-   - Vá para **"Tools"** > **"Plugins"**.
-   - Na aba **"Downloaded"**, clique em **"Add Plugins..."**.
-   - Selecione o arquivo `.nbm` e clique em **"Install"**.
-   - Reinicie o NetBeans para aplicar as mudanças.
+Com esse plugin, você pode compartilhar sua atividade de forma dinâmica e interativa com seus amigos e colegas de trabalho no Discord, sem precisar se preocupar em atualizar seu status manualmente.
 
-## Configuração
+---
 
-1. **Abra as Configurações do Plugin**:
-   - Vá para **"Tools"** > **"Options"**.
-   - Selecione a aba **"NetBeans RPC"**.
+## 🌟 **Funcionalidades**
 
-2. **Configure o RPC**:
-   - Crie uma aplicação na parte de desenvolvedor do Discord
-   - Copie o ID do Cliente e coloque na classe **"Discord.java"**
-   - Após isso, só definir na classe **"NetBeans"**, os nomes de ícones de cada arquivo, pois eles não estão no repositório, apenas na pag de dev.
-   - Defina as imagens e descrições que serão exibidas no status do Discord usando o Discord Game SDK.
-   - Ajuste outras preferências conforme necessário.
+- **Exibe o arquivo atual sendo editado** no NetBeans.
+- **Mostra o nome do projeto atual**.
+- **Acompanhamento em tempo real** da linha e número total de linhas.
+- **Exibição de ícones personalizados** no Discord para diferentes tipos de projetos.
 
-## Contribuição
+---
 
-Se você deseja contribuir para o projeto, envie suas sugestões e melhorias através de pull requests ou abra uma issue no repositório do GitHub.
+## 🛠 **Instalação**
 
-## Contato
+1. **Baixe o arquivo `.nbm`** da seção de artefatos.
+2. **Instale no NetBeans**:
+   - Abra o **NetBeans IDE**.
+   - Vá em **Tools → Plugins**.
+   - Clique em **Settings** e adicione o arquivo `.nbm`.
+   - Após a instalação, reinicie o NetBeans.
+3. O plugin já estará integrado ao seu ambiente de desenvolvimento e se conectará ao Discord automaticamente.
 
-Para mais informações ou suporte, entre em contato comigo através do [GitHub](https://github.com/PyEdoardo) ou envie um e-mail para [edoardotombolesi8@gmail.com](mailto:edoardotombolesi8@gmail.com).
+---
 
-Obrigado por usar o **netbeans-rpc**!
+## 💻 **Tecnologias Usadas**
+
+- **NetBeans IDE**: Plataforma de desenvolvimento.
+- **Discord RPC SDK**: SDK oficial do Discord para integração com aplicativos.
+- **Java**: Linguagem de programação utilizada para o desenvolvimento do plugin.
+
+---
+
+## 🧑‍💻 **Contribua**
+
+Sinta-se à vontade para contribuir! Abra um **issue** ou envie um **pull request**.
+
+1. Fork o repositório.
+2. Crie uma branch para sua alteração (`git checkout -b minha-alteracao`).
+3. Comite suas mudanças (`git commit -am 'Adiciona nova funcionalidade'`).
+4. Push para a branch (`git push origin minha-alteracao`).
+5. Abra um pull request.
+
+---
+
+## 📦 **Baixar**
+
+Clique abaixo para baixar a versão mais recente do plugin:
+
+[Baixar o plugin](https://github.com/PyEdoardo/NetBeans-RPC/releases/tag/1.5)  <!-- Substitua pelo link para o artefato no GitHub -->
+
+---
+
+## 🔗 **Links úteis**
+
+- [Documentação Oficial do NetBeans](https://netbeans.apache.org/)
+- [Discord Developer Portal](https://discord.com/developers/docs/intro)
+
+---
+
+## 💬 **Contato**
+
+Se tiver dúvidas ou sugestões, entre em contato comigo através do [email](mailto:edoardotombolesi8@gmail.com).
+
+---
+
+### **Licença**
+
+Este projeto está licenciado sob a **GPL-3.0 License** - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
